@@ -1,5 +1,10 @@
 Cms::Application.routes.draw do
-  resources :pages
+
+  resources :pages, only: [:show, :index]
+
+  namespace :admin do
+    resources :pages
+  end
 
 
   # The priority is based upon order of creation:
